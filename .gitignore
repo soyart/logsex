@@ -1,0 +1,6 @@
+.DS_Store
+
+bak
+*.md.bak
+
+logseq/.recycle
