@@ -3,16 +3,19 @@
 	- [logsex](https://github.com/soyart/logsex) provides an initial Logseq graph and CICD assets to integrate with GitHub Pages
 	- There many use cases for Logseq publishing, including internal Wiki, and cheat sheets
 	- logsex then allows us to focus on writing and pushing changes, and forget about the simple twist of fate
+	- To reduce complexity, all content in the graph is considered public for this purpose (Logseq defaults to private content)
+	  
+	  > Consult Logseq configuration file if you want to make public only a small subset of graph content.
 	- ## Why?
 		- Although Logseq has publishing features built in, deploying the generated site manually to some URLs can be very painful
-		- GitHub Pages can scale really well
+		- GitHub Pages is a good infrastructure for simple static sites
 - # Write and build Logseq SPA
 	- Fork this repository on GitHub
 	- Start writing to Logseq, committing changes to Git when done
 	- For each push to `master`, the Logseq static SPA will be built and deployed to branch `publish` via GitHub workflow `/.github/workflows/publish.yaml`
 - # Publish with GitHub Pages
 	- > logsex intentionally ignores GitHub workflow files for GitHub Pages because I'm too lazy and we generally do this once per repository anyway.
-	- Enable GitHub Pages for your repository on the WebUI
+	- Enable GitHub Pages for your repository on the WebUI, with `Deploy from a branch` strategy, which should be the default
 	- In GitHub Pages settings, configure the root of the website to the root of branch `publish`
 	- After the SPA assets are made available in `publish`, GitHub Pages should be able to put it up on the designated URL
 - # GitHub Pages with HTTPS
