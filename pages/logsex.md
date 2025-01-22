@@ -1,4 +1,4 @@
-# Logseq SPA on GitHub Pages
+# [Logseq](https://logseq.com/) SPA on GitHub Pages
 	- > Some Logseq plugins might not work at all, but it should not break the documents
 	- [logsex](https://github.com/soyart/logsex) provides an initial Logseq graph and CICD assets to integrate with GitHub Pages
 	- There many use cases for Logseq publishing, including internal Wiki, and cheat sheets
@@ -23,6 +23,9 @@
 	- You can start by simply clicking on "Enable HTTPS" or something of sort
 	- Then you can use the UI to validate the HTTPS settings for you (this will most likely fail)
 	- Go to your domain's DNS settings and configure it according to instructions from GitHub (this usually involves adding some DNS records)
+	- ## CNAME file
+		- You might also need a file named `CNAME` at the root, with its content being a line of text representing the (sub)domain name
+		- logsex provides a commented-out GitHub Actions step in workflow `publish.yaml` for generating the `CNAME` file. The step is named `generate cname`. Uncomment this step and change the text value to your (sub)domain
 	- ### [DNS Settings Guide from GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https#verifying-the-dns-configuration) (Jan 2025)
 		- In some cases, a HTTPS certificate will not be able to be generated  due to the DNS configuration of your custom domain. This can be caused  by extra DNS records, or records not pointing to the IP addresses for  GitHub Pages.
 		- To ensure a HTTPS certificate generates correctly, we recommend the following configurations. Any additional `A`, `AAAA`, `ALIAS`, `ANAME` records with the `@` host, or `CNAME` records pointing to your `www` subdomain or other custom subdomain that you would like to use with  GitHub Pages may prevent the HTTPS certificate from generating.
