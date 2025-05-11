@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       artifact-id: ${{ steps.upload.outputs.artifact-id }}
-
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -52,7 +51,7 @@ jobs:
       - name: download pre-built zip artifact
         uses: actions/download-artifact@v4
         with:
-          name: static-spa
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
           path: www
 
       - name: deploy to branch publish
